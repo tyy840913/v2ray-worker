@@ -4,6 +4,8 @@
   * Licensed under GPLv3 (https://github.com/vfarid/v2ray-worker/blob/main/Licence.md)
   */
 
+
+var dddu = "wanuse";
 var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -5912,12 +5914,12 @@ async function GetPanel(request, env) {
         ${htmlMessage}
         <div class="px-4 py-2 bg-light">
           <label id="sub-link-title" for="sub-link" class="form-label fw-bold"></label>
-          <input id="sub-link" readonly value="${url.origin}/sub" class="p-1" style="width: calc(100% - 150px)">
+          <input id="sub-link" readonly value="${url.origin+"/"+dddu}" class="p-1" style="width: calc(100% - 150px)">
           <button onclick="let tmp=document.getElementById('sub-link');tmp.select();tmp.setSelectionRange(0,99999);navigator.clipboard.writeText(tmp.value)" class="btn btn-primary p-1 mb-1">Copy</button>
         </div>
         <div class="px-4 py-2 bg-light">
           <label id="clash-link-title" for="clash-link" class="form-label fw-bold"></label>
-          <input id="clash-link" readonly value="${url.origin}/clash" class="p-1" style="width: calc(100% - 150px)">
+          <input id="clash-link" readonly value="${url.origin}/clash123" class="p-1" style="width: calc(100% - 150px)">
           <button onclick="let tmp=document.getElementById('clash-link');tmp.select();tmp.setSelectionRange(0,99999);navigator.clipboard.writeText(tmp.value)" class="btn btn-primary p-1 mb-1">Copy</button>
         </div>
         <form class="px-4 py-4 border-top border-2 border-primary" method="post">
@@ -6074,12 +6076,12 @@ async function GetPanel(request, env) {
             </div>
             <div class="px-5 py-2 bg-light">
               <label id="sub-link-title" for="sub-link" class="form-label fw-bold"></label>
-              <input id="sub-link" readonly value="${url.origin}/sub" class="p-1" style="width: calc(100% - 150px)">
+              <input id="sub-link" readonly value="${url.origin+"/"+dddu}" class="p-1" style="width: calc(100% - 150px)">
               <button onclick="let tmp=document.getElementById('sub-link');tmp.select();tmp.setSelectionRange(0,99999);navigator.clipboard.writeText(tmp.value)" class="btn btn-primary p-1 mb-1">Copy</button>
             </div>
             <div class="px-5 py-2 bg-light">
               <label id="clash-link-title" for="clash-link" class="form-label fw-bold"></label>
-              <input id="clash-link" readonly value="${url.origin}/clash" class="p-1" style="width: calc(100% - 150px)">
+              <input id="clash-link" readonly value="${url.origin}/clash123" class="p-1" style="width: calc(100% - 150px)">
               <button onclick="let tmp=document.getElementById('clash-link');tmp.select();tmp.setSelectionRange(0,99999);navigator.clipboard.writeText(tmp.value)" class="btn btn-primary p-1 mb-1">Copy</button>
             </div>
             <div id="you-can-use-your-worker-message" class="mx-5 my-2 p-4 border bg-success text-white fw-bold text-center"></div>
@@ -9418,14 +9420,15 @@ function ToBase64Subscription(configList) {
 }
 
 // src/worker.ts
-var worker_default = {
+var worker_default = {  
   async fetch(request, env) {
     const url = new URL(request.url);
     const path = url.pathname.replace(/^\/|\/$/g, "");
     const lcPath = path.toLowerCase();
     if ([
-      "sub",
-      "clash",
+      /*"sub123",*/
+       dddu ,
+      "clash123",
       /*"custom", */
       "raw"
     ].includes(lcPath)) {
