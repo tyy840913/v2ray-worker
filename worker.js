@@ -1,5 +1,5 @@
 /*!
-  * v2ray Subscription Worker v2.4
+  * v2ray Subscription Worker v2.4-ddd.1
   * Copyright 2024 Vahid Farid (https://twitter.com/vahidfarid)
   * Licensed under GPLv3 (https://github.com/vfarid/v2ray-worker/blob/main/Licence.md)
   */
