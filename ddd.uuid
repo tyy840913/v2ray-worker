@@ -5330,7 +5330,7 @@ function Base64ToArrayBuffer(base64Str) {
   }
 }
 function IsValidVlessUUID(uuid) {
-  return /^88888888-8fd4-4244-8d0a-8431008e6d67$/i.test(uuid);
+  if (ddduuid === uuid){return uuid; }
 }
 function Stringify(arr, offset = 0) {
   const uuid = UnsafeStringify(arr, offset);
